@@ -1,13 +1,13 @@
-const http = require('http');
-const hostname = 'localhost';
-const port = 3000;
+import express from "express"
+import cors from "cors"
+import restaurants from "./api/restaurants.route.js"
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain0');
-    res.end('Hello, World');
-});
+const app = express()
 
-server.listen(port, hostname, () => {
-    console.log("Server running at http://${hostname}:{port}/");
-})
+app.use(cors())
+app.use(express.json())
+
+app.use("/api/v1/restaurants", restaurants)
+app.use("*", (req, res) => res.status(404).json({ error: "not found}"}))
+
+export default app
