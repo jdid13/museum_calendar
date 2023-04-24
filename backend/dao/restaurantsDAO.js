@@ -1,3 +1,5 @@
+import mongodb from "mongodb"
+const ObjectId = mongodb.ObjectID
 let restaurants
 
 export default class RestaurantsDAO {
@@ -16,8 +18,9 @@ export default class RestaurantsDAO {
     }
 
     static async getRestaurants({
-        filters = nullpage = 0,
+        filters = null,
         restaurantsPerPage = 20,
+        page = 0
     } = {}) {
 
         let query
@@ -44,6 +47,8 @@ export default class RestaurantsDAO {
         try {
             const restaurantsList = await displayCursor.toArray()
             const totalNumRestaurants = await restaurants.countDocuments(query)
+
+            return { restaurantsList, totalNumRestaurants }
         } catch (e) {
             console.error(`Unable to convert cursor to array or problem counting documents, ${e}`)
             return { restaurantsList: [], totalNumRestaurants: 0}

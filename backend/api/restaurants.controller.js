@@ -10,7 +10,7 @@ export default class RestaurantsController {
         if (req.query.cuisine) {
             filters.cuisine = req.query.cuisine
         } else if (req.query.zipcode) {
-            filters.ZIPCODE = req.query.zipcode
+            filters.zipcode = req.query.zipcode
         } else if (req.query.name) {
             filters.name = req.query.name
         }
@@ -22,7 +22,12 @@ export default class RestaurantsController {
         })
 
         let response = {
-            
+            restaurants: restaurantsList,
+            page: page,
+            filters: filters,
+            entries_per_page: restaurantsPerPage,
+            total_results: totalNumRestaurants
         }
+        res.json(response)
     }
 }
