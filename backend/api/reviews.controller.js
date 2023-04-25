@@ -1,5 +1,5 @@
 import e from "express";
-import RestaurantsDAO from "../dao/restaurantsDAO.js";
+import ReviewsDAO from "../dao/reviewsDAO.js";
 
 export default class ReviewsController {
     static async apiPostReview(req, res, next) {
@@ -8,7 +8,7 @@ export default class ReviewsController {
             const review = req.body.text
             const userInfo = {
                 name: req.body.name,
-                _id: req.body._id
+                _id: req.body.user_id
             }
 
             const date = new Date()
@@ -16,7 +16,8 @@ export default class ReviewsController {
             const ReviewResponse = await ReviewsDAO.addReview(
                 restaurantId,
                 userInfo,
-                review,date
+                review,
+                date
             )
             res.json({ status: "success"})
         } catch (e) {
@@ -30,7 +31,7 @@ export default class ReviewsController {
             const text = req.body.text
             const date = new Date()
 
-            const ReviewResponse = await ReviewsDAO.updateReview(
+            const reviewResponse = await ReviewsDAO.updateReview(
                 reviewId,
                 req.body.user_id,
                 text,
@@ -60,9 +61,9 @@ export default class ReviewsController {
             const userId = req.body.user_id
             console.log(reviewId)
 
-            const ReviewResponse = await ReviewsDAO.deleteReview(
+            const reviewResponse = await ReviewsDAO.deleteReview(
                 reviewId,
-                user_id,
+                userId,
             )
             
             res.json({ status: "success"})

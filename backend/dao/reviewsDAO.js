@@ -23,7 +23,7 @@ export default class ReviewsDAO {
             user_id: user._id,
             date: date,
             text: review,
-            restaurant_id: ObjectId(restaurantId)
+            restaurant_id: new ObjectId(restaurantId)
             }
             
             return await reviews.insertOne(reviewDoc)
@@ -50,7 +50,7 @@ export default class ReviewsDAO {
     static async deleteReview(reviewId, userId) {
         try {
             const deleteResponse = await reviews.deleteOne({
-                _id: userId,
+                _id: ObjectId(reviewId),
                 user_id: userId
             })
             
