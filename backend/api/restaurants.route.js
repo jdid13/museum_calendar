@@ -9,7 +9,7 @@ router.route("/id/:id").get(RestaurantsCtrl.apiGetRestaurantbyId)
 router.route("/cuisines").get(RestaurantsCtrl.apiGetRestaurantCuisines)
 
 router
-    .route("/review")
+    .route("/reviews")
     .post(ReviewsCtrl.apiPostReview)
     .put(ReviewsCtrl.apiUpdateReview)
     .delete(ReviewsCtrl.apiDeleteReview)
