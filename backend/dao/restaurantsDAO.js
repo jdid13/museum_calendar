@@ -60,7 +60,7 @@ export default class RestaurantsDAO {
         try { const pipeline = [
             {
                 $match: {
-                    _id: new ObjectId(id)
+                    _id: new ObjectId(id),
                 },
             },
             {
