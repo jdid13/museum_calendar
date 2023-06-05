@@ -1,14 +1,20 @@
-const Page = () => {
+const EventsPage = () => {
     return <div>
         <header>
             <nav>
-                <img />
-                <a href='/'> Home </a>
-                <a href='/events'> Events </a>
-                <a href='/about-us'> About Us </a>
+                <div className="header-logo-container">
+                    <img />
+                    <span className="header-logo-title">Nadir Benadda</span>
+                </div>
+
+                <div>
+                    <a href='/'> Home </a>
+                    <a href='/events'> Events </a>
+                    <a href='/about-us'> About Us </a>
+                </div>
             </nav>
         </header>
-        <h1>Events Page</h1>
+        <h1>Event page</h1>
         <div>
             <a href=''>
                 <img />
@@ -28,4 +34,5 @@ const Page = () => {
     </div>
 }
 
-export default Page;
+export default EventsPage;
+
