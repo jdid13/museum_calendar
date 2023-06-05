@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Header from '../src/components/header/header.jsx'
 
 
 export default function Home({title}) {
@@ -12,23 +13,7 @@ export default function Home({title}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-            <nav>
-                <div className="header-logo-container">
-                    <Image
-                      src='../public/'
-                      alt='profile picture' 
-                      className='header-pp-img'/>
-                    <span className="header-logo-title">Museum Calendar</span>
-                </div>
-
-                <div className='nav-list'>
-                    <a className='nav-item' href='/'>Accueil</a>
-                    <a className='nav-item' href='/events'>Expositions</a>
-                    <a className='nav-item' href='/about-us'>Musées</a>
-                </div>
-            </nav>
-        </header>
+      <Header />
 
       <main className={styles.main}>
         <a href='/events/london'>
