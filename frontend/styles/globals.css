@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@500&family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@400&family=Raleway:wght@700&display=swap');
 
 /* CSS Variables */
 :root {
@@ -9,7 +9,7 @@
   --text-color-light: #FAFAFA;
   --accent-color: #F24236;
   --background-color: #F3EBE2, ;
-  --background-color-dark: #E2D1BB;
+  --background-color-dark: #111;
 
   /* Font and typography */
   --title-font: 'Raleway', sans-serif;
@@ -21,7 +21,19 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--body-font)
+  font-family: var(--body-font);
+  background-color: #F3EBE2;
+}
+
+main {
+  padding-bottom: 5rem;
+  background-color: var(--background-color);
+}
+
+h1 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-size: 2.25rem;
 }
 
 h2 {
@@ -31,6 +43,13 @@ h2 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 140%;
 }
 
 header, footer {
@@ -59,10 +78,35 @@ header, footer {
 }
 
 .header-pp-img {
-  border-radius: 50%;
-  height: 50px;
+  height: 68px;
   margin-right: 1.5rem;
 }
+
+.header-logo-title {
+  font-size: 2rem;
+  display: flex;
+}
+
+.home-container {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.introduction-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 20%;
+  gap: 24px;
+}
+
+.introduction-container-paragraphs {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: left;
+  gap: 1rem;
+}
+
 nav {
   display: flex;
   flex-flow: row nowrap;
@@ -74,4 +118,25 @@ nav {
 }
 .nav-item {
   padding: 1rem;
+  font-size: 1.5rem;
+}
+
+footer {
+  height: 89px;
+  background-color: var(--background-color-dark);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  color:  var(--text-color-light);
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  font-size: 1rem;
 }

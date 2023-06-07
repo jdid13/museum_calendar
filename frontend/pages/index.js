@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Header from '../src/components/header/header.jsx'
+import { HomePage } from '../src/components/home/home-page'
+import { Header } from '../src/components/header/header'
+import { Footer } from '../src/components/footer/footer'
 
 
 export default function Home({title}) {
@@ -15,44 +16,10 @@ export default function Home({title}) {
 
       <Header />
 
-      <main className={styles.main}>
-        <a href='/events/london'>
-          <img />
-          <h2>Events in London</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </a>
+      <HomePage />
 
-        <a href='/events/sanfrancisco'>
-          <img />
-          <h2>Events in San Francisco</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </a>
-
-        <a href='/events/barcelona'>
-          <img />
-          <h2>Events in Barcelona</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </a>
-      </main>
-
-      <footer className={styles.footer}>
-        <p>
-          2023 Time to code - NextJS Project
-        </p>
-      </footer>
-    </div>
+      <Footer />
+    </div> 
   )
 }
 
